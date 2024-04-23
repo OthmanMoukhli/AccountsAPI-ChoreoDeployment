@@ -91,12 +91,14 @@
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
+    <!-- commented out for deployment 
     <dependency>
       <groupId>com.example.resource</groupId>
       <artifactId>swagger_yaml</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
+    -->
     <dependency>
       <groupId>com.example.metadata</groupId>
       <artifactId>AccountsAPI_swagger</artifactId>
