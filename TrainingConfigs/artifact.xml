@@ -11,4 +11,16 @@
     <artifact name="GetAllFlightsCustomers" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/GetAllFlightsCustomers.xml</file>
     </artifact>
+    <artifact name="get-accounts" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/get-accounts.xml</file>
+    </artifact>
+    <artifact name="GetFlightsCustomersByName" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/GetFlightsCustomersByName.xml</file>
+    </artifact>
+    <artifact name="GetFlightsCustomersByType" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/GetFlightsCustomersByType.xml</file>
+    </artifact>
+    <artifact name="GetFlightsCustomersByTypeAndName" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/GetFlightsCustomersByTypeAndName.xml</file>
+    </artifact>
 </artifacts>

@@ -20,8 +20,75 @@
         </result>
     </query>
     <resource method="GET" path="flights_customers">
-        <call-query href="select_all_flights_customers_query"/>
+        <call-query href="select_all_flights_customers_query">
+        </call-query>
     </resource>
+    <query id="select_flights_customers_by_type_query" useConfig="default">
+        <sql>SELECT accountID, name, street, city, state, postal, country, accountType, creationDate, miles FROM flights_customers WHERE accountType=?</sql>
+        <param name="accountType" ordinal="1" paramType="SCALAR" sqlType="STRING" type="IN"/>
+        <result element="flights_customersCollection" rowName="flights_customers">
+            <element column="accountID" name="accountID" xsdType="xs:string"/>
+            <element column="country" name="country" xsdType="xs:string"/>
+            <element column="city" name="city" xsdType="xs:string"/>
+            <element column="street" name="street" xsdType="xs:string"/>
+            <element column="accountType" name="accountType" xsdType="xs:string"/>
+            <element column="name" name="name" xsdType="xs:string"/>
+            <element column="state" name="state" xsdType="xs:string"/>
+            <element column="postal" name="postal" xsdType="xs:string"/>
+            <element column="creationDate" name="creationDate" xsdType="xs:timestamp"/>
+            <element column="miles" name="miles" xsdType="xs:integer"/>
+        </result>
+    </query>
+    <resource method="GET" path="flights_customers_by_type">
+        <call-query href="select_flights_customers_by_type_query">
+        	<with-param name="accountType" query-param="account_type"/>
+        </call-query>
+    </resource>
+    <query id="select_flights_customers_by_name_query" useConfig="default">
+        <sql>SELECT accountID, name, street, city, state, postal, country, accountType, creationDate, miles FROM flights_customers WHERE name=?</sql>
+        <param name="name" ordinal="1" paramType="SCALAR" sqlType="STRING" type="IN"/>
+        <result element="flights_customersCollection" rowName="flights_customers">
+            <element column="accountID" name="accountID" xsdType="xs:string"/>
+            <element column="country" name="country" xsdType="xs:string"/>
+            <element column="city" name="city" xsdType="xs:string"/>
+            <element column="street" name="street" xsdType="xs:string"/>
+            <element column="accountType" name="accountType" xsdType="xs:string"/>
+            <element column="name" name="name" xsdType="xs:string"/>
+            <element column="state" name="state" xsdType="xs:string"/>
+            <element column="postal" name="postal" xsdType="xs:string"/>
+            <element column="creationDate" name="creationDate" xsdType="xs:timestamp"/>
+            <element column="miles" name="miles" xsdType="xs:integer"/>
+        </result>
+    </query>
+    <resource method="GET" path="flights_customers_by_name">
+        <call-query href="select_flights_customers_by_name_query">
+        	<with-param name="name" query-param="account_name"/>
+        </call-query>
+    </resource>
+    <query id="select_flights_customers_by_type_and_name_query" useConfig="default">
+        <sql>SELECT accountID, name, street, city, state, postal, country, accountType, creationDate, miles FROM flights_customers WHERE accountType=? AND name=?</sql>
+        <param name="accountType" ordinal="1" paramType="SCALAR" sqlType="STRING" type="IN"/>
+        <param name="name" ordinal="2" paramType="SCALAR" sqlType="STRING" type="IN"/>
+        <result element="flights_customersCollection" rowName="flights_customers">
+            <element column="accountID" name="accountID" xsdType="xs:string"/>
+            <element column="country" name="country" xsdType="xs:string"/>
+            <element column="city" name="city" xsdType="xs:string"/>
+            <element column="street" name="street" xsdType="xs:string"/>
+            <element column="accountType" name="accountType" xsdType="xs:string"/>
+            <element column="name" name="name" xsdType="xs:string"/>
+            <element column="state" name="state" xsdType="xs:string"/>
+            <element column="postal" name="postal" xsdType="xs:string"/>
+            <element column="creationDate" name="creationDate" xsdType="xs:timestamp"/>
+            <element column="miles" name="miles" xsdType="xs:integer"/>
+        </result>
+    </query>
+    <resource method="GET" path="flights_customers_by_type_and_name">
+        <call-query href="select_flights_customers_by_type_and_name_query">
+        	<with-param name="accountType" query-param="account_type"/>
+        	<with-param name="name" query-param="account_name"/>
+        </call-query>
+    </resource>
+    
     <query id="insert_flights_customers_query" useConfig="default">
         <sql>INSERT INTO flights_customers(accountID,country,city,street,accountType,name,state,postal,creationDate,miles) VALUES(?,?,?,?,?,?,?,?,?,?)</sql>
         <param name="accountID" ordinal="1" paramType="SCALAR" sqlType="STRING" type="IN"/>

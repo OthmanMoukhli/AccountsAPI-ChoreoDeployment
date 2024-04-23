@@ -5,9 +5,7 @@
             <!--This is generated API skeleton.-->
             <!--Business Logic Goes Here-->
             <header action="remove" name="Accept" scope="transport"/>
-            <call>
-                <endpoint key="GetAllFlightsCustomers"/>
-            </call>
+            <sequence key="get-accounts"/>
             <datamapper config="gov:datamapper/XMLtoJSON.dmc" inputSchema="gov:datamapper/XMLtoJSON_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/XMLtoJSON_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/XMLtoJSON_xsltStyleSheet.xml"/>
             <loopback/>
         </inSequence>

@@ -14,14 +14,17 @@
   <name>TrainingCompositeExporter</name>
   <description>TrainingCompositeExporter</description>
   <properties>
-    <com.example.metadata_._AccountsAPI_metadata>capp/EnterpriseServiceBus</com.example.metadata_._AccountsAPI_metadata>
     <com.example.resource_._XMLtoJSON_inputSchema>capp/EnterpriseServiceBus</com.example.resource_._XMLtoJSON_inputSchema>
+    <com.example.sequence_._get-accounts>capp/EnterpriseServiceBus</com.example.sequence_._get-accounts>
+    <com.example.endpoint_._GetFlightsCustomersByTypeAndName>capp/EnterpriseServiceBus</com.example.endpoint_._GetFlightsCustomersByTypeAndName>
+    <com.example.endpoint_._GetFlightsCustomersByType>capp/EnterpriseServiceBus</com.example.endpoint_._GetFlightsCustomersByType>
     <com.example.api_._AccountsAPI>capp/EnterpriseServiceBus</com.example.api_._AccountsAPI>
+    <com.example.endpoint_._GetFlightsCustomersByName>capp/EnterpriseServiceBus</com.example.endpoint_._GetFlightsCustomersByName>
     <com.example.resource_._XMLtoJSON_outputSchema>capp/EnterpriseServiceBus</com.example.resource_._XMLtoJSON_outputSchema>
     <com.example.dataservice_._datasource_DataService>capp/DataServicesServer</com.example.dataservice_._datasource_DataService>
     <com.example.datasource_._datasource>capp/DataServicesServer</com.example.datasource_._datasource>
-    <com.example.resource_._swagger_yaml>capp/EnterpriseIntegrator</com.example.resource_._swagger_yaml>
     <com.example.endpoint_._GetAllFlightsCustomers>capp/EnterpriseServiceBus</com.example.endpoint_._GetAllFlightsCustomers>
+    <com.example.resource_._swagger_yaml>capp/EnterpriseIntegrator</com.example.resource_._swagger_yaml>
     <com.example.metadata_._AccountsAPI_swagger>capp/EnterpriseServiceBus</com.example.metadata_._AccountsAPI_swagger>
     <com.example.resource_._XMLtoJSON>capp/EnterpriseServiceBus</com.example.resource_._XMLtoJSON>
     <com.example.resource_._XMLtoJSON_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.resource_._XMLtoJSON_xsltStyleSheet>
@@ -29,34 +32,26 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.datasource</groupId>
-      <artifactId>datasource</artifactId>
-      <version>5.2.45</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
       <groupId>com.example.resource</groupId>
       <artifactId>XMLtoJSON_inputSchema</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
-    <!--
     <dependency>
-      <groupId>com.example.resource</groupId>
-      <artifactId>swagger_yaml</artifactId>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>get-accounts</artifactId>
       <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    -->
-    <dependency>
-      <groupId>com.example.metadata</groupId>
-      <artifactId>AccountsAPI_metadata</artifactId>
-      <version>1.0.0</version>
-      <type>yaml</type>
+      <type>xml</type>
     </dependency>
     <dependency>
       <groupId>com.example.endpoint</groupId>
-      <artifactId>GetAllFlightsCustomers</artifactId>
+      <artifactId>GetFlightsCustomersByTypeAndName</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>GetFlightsCustomersByType</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -65,6 +60,42 @@
       <artifactId>AccountsAPI</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>GetFlightsCustomersByName</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.resource</groupId>
+      <artifactId>XMLtoJSON_outputSchema</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.dataservice</groupId>
+      <artifactId>datasource_DataService</artifactId>
+      <version>1.0.0</version>
+      <type>dbs</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.datasource</groupId>
+      <artifactId>datasource</artifactId>
+      <version>5.2.45</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>GetAllFlightsCustomers</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.resource</groupId>
+      <artifactId>swagger_yaml</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.metadata</groupId>
@@ -83,18 +114,6 @@
       <artifactId>XMLtoJSON_xsltStyleSheet</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.resource</groupId>
-      <artifactId>XMLtoJSON_outputSchema</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.dataservice</groupId>
-      <artifactId>datasource_DataService</artifactId>
-      <version>1.0.0</version>
-      <type>dbs</type>
     </dependency>
   </dependencies>
   <repositories>
