@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="get-accounts" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <switch source="concat(&quot;typeIsEmpty: &quot;,not(boolean($ctx:query.param.account_type)),&quot;, nameIsEmpty: &quot;,not(boolean($ctx:query.param.account_name)))">
+        <case regex="typeIsEmpty: false, nameIsEmpty: false">
+            <call>
+                <endpoint key="GetFlightsCustomersByTypeAndName"/>
+            </call>
+        </case>
+        <case regex="typeIsEmpty: true, nameIsEmpty: false">
+            <call>
+                <endpoint key="GetFlightsCustomersByName"/>
+            </call>
+        </case>
+        <case regex="typeIsEmpty: false, nameIsEmpty: true">
+            <call>
+                <endpoint key="GetFlightsCustomersByType"/>
+            </call>
+        </case>
+        <default>
+            <call>
+                <endpoint key="GetAllFlightsCustomers"/>
+            </call>
+        </default>
+    </switch>
+</sequence>

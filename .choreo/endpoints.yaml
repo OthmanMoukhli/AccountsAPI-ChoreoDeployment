@@ -1,0 +1,8 @@
+version: 1.0
+endpoints:
+  - name: AccountsAPI
+    port: 8290
+    type: REST
+    networkVisibility: Public
+    context: /default
+    schemaFilePath: src/main/wso2mi/resources/registry/gov/swagger_files/swagger.yaml
